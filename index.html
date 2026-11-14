@@ -31,7 +31,7 @@
  <div class="side-bottom"><span class="offline-dot"></span> 오프라인 사용 가능<small>26기 · v1.0<br>교육용 초안 · 2026.11.14 편집</small></div>
 </aside>
 <div class="workspace">
- <header class="topbar"><span>INCHEON NATIONAL UNIVERSITY</span><div><button id="save-html" class="quiet">사진 포함 HTML 저장</button><button id="print" class="quiet">인쇄 / PDF</button></div></header>
+ <header class="topbar"><span>INCHEON NATIONAL UNIVERSITY</span><div><button id="print" class="quiet">인쇄 / PDF</button></div></header>
  <main id="main" tabindex="-1">
   <section data-section="learn" aria-labelledby="learn-title">
    <div class="hero"><div class="hero-copy"><p class="eyebrow">26기 드림이를 위한 현장 가이드</p><h1 id="learn-title">캠퍼스를 이해하고,<br>자신 있게 안내하기.</h1><p>학과 구성과 핵심 학과, 시설의 자랑거리부터.<br>외울 내용은 선명하게, 필요한 설명은 충분하게.</p><div class="hero-tags"><span>필수 숙지</span><span>추가 참고</span><span>실무교육</span></div></div><div class="hero-index"><span>FIELD MANUAL</span><strong>26</strong><p>기억할 핵심을 배우고<br>나의 말로 소개하세요.</p><a href="#practice">투어 운영 준비하기 ↗</a></div></div>
@@ -517,7 +517,7 @@ function setMode(m){mode=m;$$('[data-mode]').forEach(b=>b.setAttribute('aria-pre
 function showPhoto(src,caption){if(!/^data:image\/(png|jpeg|webp|gif|avif|bmp);base64,/i.test(src))return;$('#large-photo').src=src;$('#large-photo').alt=caption;$('#large-caption').textContent=caption;$('#photo-dialog').showModal();}
 function refreshPhoto(slot){const id=slot.dataset.photo,caption=slot.dataset.caption,p=photos[id];const good=p&&/^data:image\/(png|jpeg|webp|gif|avif|bmp);base64,/i.test(p);slot.classList.toggle('has-photo',!!good);slot.innerHTML=`${good?`<img src="${p}" alt="${esc(caption)}" loading="lazy">`:'<span aria-hidden="true">＋</span>'}<p>${esc(caption)}</p><div class="photo-actions"><button type="button" class="choose-photo">${good?'사진 바꾸기':'사진 선택'}</button>${good?'<button type="button" class="remove-photo">사진 제거</button>':''}</div><input type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" hidden aria-label="${esc(caption)} 사진 선택">`;
  slot.querySelector('.choose-photo').onclick=()=>slot.querySelector('input').click();
- slot.querySelector('input').onchange=()=>{const f=slot.querySelector('input').files[0];if(!f)return;if(!/^image\/(png|jpeg|webp|gif|avif|bmp)$/.test(f.type)||f.size>8*1024*1024){toast('JPG·PNG·WebP 등 이미지 파일을 8MB 이하로 선택하세요.');return;}const reader=new FileReader();reader.onload=()=>{photos[id]=reader.result;refreshPhoto(slot);toast('사진을 넣었습니다. 상단의 사진 포함 HTML 저장으로 보관하세요.');};reader.onerror=()=>toast('사진을 읽지 못했습니다. 다른 파일을 선택하세요.');reader.readAsDataURL(f);};
+ slot.querySelector('input').onchange=()=>{const f=slot.querySelector('input').files[0];if(!f)return;if(!/^image\/(png|jpeg|webp|gif|avif|bmp)$/.test(f.type)||f.size>8*1024*1024){toast('JPG·PNG·WebP 등 이미지 파일을 8MB 이하로 선택하세요.');return;}const reader=new FileReader();reader.onload=()=>{photos[id]=reader.result;refreshPhoto(slot);toast('사진을 넣었습니다.');};reader.onerror=()=>toast('사진을 읽지 못했습니다. 다른 파일을 선택하세요.');reader.readAsDataURL(f);};
  if(good){slot.querySelector('img').onclick=()=>showPhoto(p,caption);slot.querySelector('.remove-photo').onclick=()=>{delete photos[id];refreshPhoto(slot);toast('사진을 제거했습니다. 변경 내용을 파일로 저장하세요.');};}
 }
 renderCards();
@@ -536,7 +536,6 @@ $('#close-photo').onclick=()=>$('#photo-dialog').close();$('#photo-dialog').addE
 let priorDetails=[];
 window.addEventListener('beforeprint',()=>{priorDetails=$$('details:not(.archive)').map(d=>[d,d.open]);priorDetails.forEach(([d])=>d.open=true);});
 window.addEventListener('afterprint',()=>priorDetails.forEach(([d,open])=>d.open=open));$('#print').onclick=()=>window.print();
-$('#save-html').onclick=()=>{if(document.querySelector('script[src]')){toast('단일 파일인 상위 폴더의 index.html에서 사진을 저장하세요.');return;}const clone=document.documentElement.cloneNode(true);['#cards','#route-list'].forEach(s=>clone.querySelector(s).innerHTML='');clone.querySelectorAll('.photo-slot').forEach(s=>s.innerHTML='');clone.querySelectorAll('#source-equipment-1,#source-equipment-2,#source-map,#source-position-41,#source-walk-16-14,#source-position-10-29,#source-position-19,#large-photo').forEach(i=>i.removeAttribute('src'));clone.querySelector('#photo-data').textContent=JSON.stringify(photos).replace(/</g,'\\u003c');clone.querySelector('#photo-dialog').removeAttribute('open');clone.querySelector('#toast').classList.remove('show');clone.querySelectorAll('input[type=checkbox]').forEach(i=>i.removeAttribute('checked'));const blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html;charset=utf-8'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='INU-26기-캠퍼스투어-사진포함.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);toast('사진을 포함한 HTML을 저장했습니다. 새 파일을 열어 확인하세요.');};
 updateCounts();applyFilter();showPage();
 })();
 
