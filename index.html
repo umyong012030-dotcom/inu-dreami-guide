@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="전달받은 캠퍼스투어 교육자료 HTML을 내 기기에서 여는 안내 페이지">
+  <meta name="color-scheme" content="light">
+  <title>DREAM-i · 캠퍼스투어 교육자료</title>
+  <style>
+    :root{--navy:#142d4e;--blue:#2159a6;--ink:#21344c;--muted:#637287;--line:#dce3ec;--paper:#f4f6f9}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;word-break:keep-all}button,input,a{-webkit-tap-highlight-color:transparent}button,a{font:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #dd9b35;outline-offset:5px}header{max-width:1100px;margin:auto;padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.mark{background:var(--navy);color:white;border-radius:10px;width:43px;height:43px;display:grid;place-items:center;font-size:14px;font-weight:800}.brand strong{display:block;font-size:18px;letter-spacing:.2px}.brand small{display:block;font-size:11px;color:var(--muted)}.header-note{font-size:12px;color:var(--muted)}main{max-width:1028px;margin:30px auto 70px;padding:0 36px}.intro{margin:0 0 34px}.eyebrow{margin:0 0 14px;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:1px}h1{font-size:clamp(30px,4.5vw,46px);line-height:1.4;letter-spacing:-1.9px;color:var(--navy);margin:0 0 15px}.intro>p:last-child{color:var(--muted);margin:0;font-size:15px}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(240px,1fr);gap:24px;align-items:start}.opener{background:white;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 8px 28px #17304e06}.file-icon{width:46px;height:54px;border:1.5px solid #b4c8e2;border-radius:7px;display:grid;place-items:center;color:var(--blue);background:#f0f5fd;font-size:11px;font-weight:800;margin-bottom:23px}h2{font-size:21px;letter-spacing:-.6px;line-height:1.5;margin:0 0 12px}.hint{font-size:14px;color:var(--muted);margin:0 0 24px}button,.open-link{min-height:48px;border-radius:8px;padding:11px 20px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;border:1px solid transparent;cursor:pointer}.select{background:var(--navy);color:white;width:100%}.select:hover{background:#23476f}.select:disabled{opacity:.5;cursor:default}.open-link{background:var(--blue);color:white;width:100%;margin-top:15px}.open-link:hover{background:#174580}[hidden]{display:none!important}.selection{margin:20px 0 0;border-top:1px solid var(--line);padding-top:18px;font-size:13px}.filename{display:block;font-weight:700;overflow-wrap:anywhere;word-break:break-all;margin-bottom:5px}.filesize{font-size:12px;color:var(--muted)}.local-note{font-size:12px;color:var(--muted);margin:20px 0 0;line-height:1.8}.error{color:#a13131;font-size:13px;margin:16px 0 0}.guide{padding:5px 4px 0 12px}.guide h2{font-size:17px;margin-bottom:22px}.steps{list-style:none;margin:0;padding:0;counter-reset:step}.steps li{counter-increment:step;padding-left:38px;position:relative;margin:0 0 24px}.steps li:before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:2px;font-size:11px;font-weight:700;color:var(--blue);background:#e5edf8;border-radius:50%;width:25px;height:25px;display:grid;place-items:center}.steps strong{font-size:14px}.steps p{font-size:13px;color:var(--muted);margin:5px 0 0}.details{margin-top:30px;border-top:1px solid var(--line);padding-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.details h3{font-size:14px;margin:0 0 6px}.details p{font-size:12px;color:var(--muted);margin:0}footer{max-width:1028px;margin:0 auto;padding:22px 36px 30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:11px;color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:690px){header{padding:22px}.header-note{display:none}main{padding:0 22px;margin-top:25px;margin-bottom:46px}h1{letter-spacing:-1.2px}.intro>p:last-child{font-size:14px}.layout{grid-template-columns:1fr;gap:28px}.opener{padding:26px}.guide{padding:0 4px}.details{grid-template-columns:1fr;gap:18px}footer{padding:20px 22px;display:block}footer span{display:block;margin-top:4px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="mark" aria-hidden="true">INU</span><div><strong>DREAM-i</strong><small>캠퍼스투어 교육자료</small></div></div>
+    <span class="header-note">자료를 여는 작은 시작점</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">CAMPUS TOUR · LEARNING</p>
+      <h1 id="title">전달받은 교육자료를<br>내 기기에서 열어보세요.</h1>
+      <p>담당자에게 받은 HTML 파일을 선택하면, 브라우저에서 바로 열 수 있습니다.</p>
+    </section>
+    <div class="layout">
+      <section class="opener" aria-labelledby="opener-title">
+        <div class="file-icon" aria-hidden="true">HTML</div>
+        <h2 id="opener-title">교육자료 열기</h2>
+        <p class="hint">내 기기에 저장한 교육자료 HTML 파일을 선택하세요.</p>
+        <button type="button" class="select" id="choose">내 기기에서 HTML 선택</button>
+        <input type="file" id="file" accept=".html,.htm,text/html" class="sr-only" tabindex="-1" aria-label="교육자료 HTML 파일 선택">
+        <div class="selection" id="selection" hidden aria-live="polite">
+          <span class="filename" id="filename"></span><span class="filesize" id="filesize"></span>
+          <a class="open-link" id="open" target="_blank" rel="noopener noreferrer">새 탭에서 자료 열기 ↗</a>
+        </div>
+        <p class="error" id="error" role="alert" hidden></p>
+        <p class="local-note">선택한 파일은 이 페이지에서 서버로 업로드하지 않습니다.<br>교육자료는 이 사이트에 포함되어 있지 않습니다.</p>
+        <noscript><p class="error">이 기능을 사용하려면 JavaScript를 켜 주세요. 받은 HTML 파일을 브라우저로 직접 열어도 됩니다.</p></noscript>
+      </section>
+      <aside class="guide" aria-labelledby="guide-title">
+        <h2 id="guide-title">처음 이용하시나요?</h2>
+        <ol class="steps">
+          <li><strong>교육자료 파일 받기</strong><p>담당자가 별도로 전달한 HTML 파일을 내 기기에 저장하세요. ZIP으로 받았다면 압축을 먼저 풀어 주세요.</p></li>
+          <li><strong>파일 선택하기</strong><p>‘내 기기에서 HTML 선택’을 누르고 저장한 파일을 선택하세요.</p></li>
+          <li><strong>새 탭에서 학습하기</strong><p>파일 이름을 확인한 뒤 ‘새 탭에서 자료 열기’를 누르세요. 담당자에게 받은 신뢰할 수 있는 파일만 여세요.</p></li>
+        </ol>
+      </aside>
+    </div>
+    <section class="details" aria-label="이용 안내">
+      <div><h3>파일을 아직 받지 못했다면</h3><p>교육 담당자에게 최신 HTML 파일을 요청해 주세요. 이 사이트에서는 교육자료를 다운로드할 수 없습니다.</p></div>
+      <div><h3>열리지 않거나 기록을 이어 쓰려면</h3><p>받은 HTML 파일을 Chrome·Edge 등의 브라우저로 직접 열어 사용하세요. 이 페이지를 닫거나 새로고침하면 파일을 다시 선택해야 합니다.</p></div>
+    </section>
+  </main>
+  <footer><span>DREAM-i · 캠퍼스투어 교육자료 안내</span><span>자료는 담당자가 별도로 전달합니다.</span></footer>
+  <script>
+    'use strict';
+    const input=document.getElementById('file'),choose=document.getElementById('choose'),selection=document.getElementById('selection'),openLink=document.getElementById('open'),error=document.getElementById('error');
+    let objectUrl=null;
+    choose.addEventListener('click',()=>input.click());
+    input.addEventListener('change',()=>{
+      const file=input.files&&input.files[0];
+      if(!file)return;
+      if(objectUrl){URL.revokeObjectURL(objectUrl);objectUrl=null;}
+      selection.hidden=true;openLink.removeAttribute('href');error.hidden=true;
+      if(!/\.html?$/i.test(file.name)){error.textContent='HTML 파일(.html 또는 .htm)을 선택해 주세요.';error.hidden=false;return;}
+      if(file.size===0){error.textContent='내용이 없는 파일입니다. 교육자료 파일을 다시 확인해 주세요.';error.hidden=false;return;}
+      if(file.size>30*1024*1024){error.textContent='파일이 너무 큽니다. 30MB 이하의 HTML을 선택하거나 브라우저로 직접 열어 주세요.';error.hidden=false;return;}
+      objectUrl=URL.createObjectURL(new Blob([file],{type:'text/html;charset=utf-8'}));
+      document.getElementById('filename').textContent=file.name;
+      document.getElementById('filesize').textContent=(file.size<1024*1024?Math.max(1,Math.round(file.size/1024))+' KB':(file.size/1024/1024).toFixed(1)+' MB')+' · 내 기기에서 열기';
+      openLink.href=objectUrl;selection.hidden=false;choose.textContent='다른 HTML 선택';
+    });
+  </script>
+</body>
+</html>
