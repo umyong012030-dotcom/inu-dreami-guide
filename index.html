@@ -151,6 +151,16 @@
 
 @media screen{.core-label{display:block;font-size:14px;line-height:1.75;margin-bottom:6px;color:var(--navy)}}
 
+/* Building explanation photos stay above the core-learning badge. */
+.building-location{margin:0 0 24px;min-width:0}
+.building-location>img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain;background:#f4f6fa;border:1px solid var(--line);border-radius:10px;cursor:zoom-in}
+.building-location-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:165px;background:#f6f8fc;border:1px dashed #b6c4d6;border-radius:10px;color:#71849b;font-size:13px}
+.building-location figcaption{margin-top:12px;line-height:1.8}
+.building-location figcaption strong{display:block;font-size:14px;color:var(--navy)}
+.building-location figcaption span{display:block;font-size:13px;color:var(--muted);margin-top:5px}
+@media screen and (max-width:760px){.building-location{margin-bottom:22px}.building-location-empty{min-height:150px}.building-location figcaption{margin-top:10px}}
+@media print{.building-location-empty{display:none}.building-location{break-inside:avoid}.building-location>img{max-height:230px}}
+
 </style>
 </head>
 <body>
@@ -170,7 +180,7 @@
  <main id="main" tabindex="-1">
   <section data-section="learn" aria-labelledby="learn-title">
    <div class="hero"><div class="hero-copy"><p class="eyebrow">26기 드림이를 위한 현장 가이드</p><h1 id="learn-title">캠퍼스를 이해하고,<br>자신 있게 안내하기.</h1><p>학과 구성과 핵심 학과, 시설의 자랑거리부터.<br>외울 내용은 선명하게, 필요한 설명은 충분하게.</p><div class="hero-tags"><span>필수 숙지</span><span>추가 참고</span><span>실무교육</span></div></div><div class="hero-index"><span>FIELD MANUAL</span><strong>26</strong><p>기억할 핵심을 배우고<br>나의 말로 소개하세요.</p><a href="#practice">투어 운영 준비하기 ↗</a></div></div>
-   <div class="section-heading"><div><p class="eyebrow">01 · CAMPUS KNOWLEDGE</p><h2>건물별 학습</h2></div><div class="learning-count"><strong id="learn-count">0 / 23</strong><span>숙지 완료</span></div></div>
+   <div class="section-heading"><div><p class="eyebrow">01 · CAMPUS KNOWLEDGE</p><h2>건물별 학습</h2></div><div class="learning-count"><strong id="learn-count">0 / 22</strong><span>숙지 완료</span></div></div>
    <div class="tools"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="건물 번호, 단과대, 학과로 검색" aria-label="건물·학과·설명 검색"><button id="clear-search" aria-label="검색어 지우기" hidden>×</button></label><div class="mode" role="group" aria-label="설명 보기"><button data-mode="core" aria-pressed="true">핵심 보기</button><button data-mode="detail" aria-pressed="false">상세 보기</button></div></div>
    <div class="filter-row"><div class="filters" role="group" aria-label="건물 종류"><button data-filter="all" aria-pressed="true">전체</button><button data-filter="단과대" aria-pressed="false">단과대·학부</button><button data-filter="시설" aria-pressed="false">주요 시설</button><button data-filter="todo" aria-pressed="false">미숙지</button></div><div class="filter-meta"><p id="results" role="status" aria-live="polite"></p><button id="reset-learning" class="quiet">숙지 체크 초기화</button></div></div>
    <p class="small muted">필수 범위는 학과 전체 구성 + 핵심 학과 특징 + 시설의 자랑거리입니다. 현장 발표 분량은 학생 관심과 시간에 맞춰 조절하세요.</p>
@@ -192,7 +202,7 @@
    </div>
    <article class="panel"><span class="step">H / 실내투어</span><h2>같은 내용을 더 자세히, 학생을 보며 설명하기</h2><p>야외와 핵심 내용은 같고 설명 순서가 달라집니다. 이동 시간이 없는 만큼 추가 참고 설명과 질문을 활용합니다. PPT·태블릿·대본을 보아도 되지만 화면만 읽지 않고 학생들과 눈을 맞춥니다.</p><details><summary>환영·마무리 인사 예시</summary><p>“안녕하세요. 저희는 인천대학교 홍보대사 드림이 26기 ○○○, ○○○입니다. 캠퍼스투어에 와주셔서 감사합니다.”</p><p>“지금까지 인천대학교 홍보대사 드림이 26기 ○○○, ○○○였습니다. 감사합니다.”</p></details></article>
   </section>
-  <section data-section="route" hidden aria-labelledby="route-title"><div class="section-heading"><div><p class="eyebrow">03 · TOUR ROUTE</p><h1 id="route-title">투어 동선</h1><p class="muted">기본 순서를 익히고, 당일 조건에 맞게 조정합니다.</p></div><span class="pill">원문 기준 약 1.5km · 약 60분</span></div><div class="notice"><strong>고정 동선이 아닙니다</strong><span>시작 장소·날씨·인원·접근성·행사 상황에 따라 변경하며 설명 대상 건물은 빠지지 않도록 확인합니다.</span></div><div class="route-grid"><article class="panel"><h2>기본 진행 순서</h2><ol class="route-list" id="route-list"></ol></article><div><article class="panel"><h2>동선 지도</h2><img id="source-map" class="map" alt="원문에 포함된 송도캠퍼스 투어 동선 지도. 빨간 경로와 노란 화살표가 표시되어 있음" loading="lazy"><p class="small muted">제공 원문의 지도 이미지입니다. 지도 속 시설명·입점·경로가 현재와 다를 수 있습니다. 전체 실제 보행 동선은 현장 교육으로 확인하세요.</p></article><article class="panel"><h2>동선 조정과 설명 위치</h2><ul><li>11호관 시작은 예술체육대학부터 출발하는 편이 효율적일 수 있습니다.</li><li>원문은 근로자 시위가 있는 경우 팻말을 피하는 동선을 제시합니다. 실제 운영은 통행·안전·현장 안내에 따라 조정합니다.</li><li>8호관 보도에서 10·27·28·29호관을 묶어 설명하고 차도로 접근하지 않습니다.</li><li>19호관 뒤로 가지 않고 17호관과 16호관 사이에서 설명합니다.</li><li>16~14호관은 차량 돌길 대신 보도를 이용합니다.</li></ul><div class="location-photos"><figure><img id="source-position-41" alt="41호관 설명 위치: 전망타워 앞 보행 공간에 빨간 테두리로 표시한 장소" loading="lazy"><figcaption><strong>41호관 설명 위치</strong><span>사진의 빨간 테두리로 표시된 위치를 참고해 41호관을 소개합니다.</span></figcaption></figure><figure><img id="source-position-10-29" alt="10호관~29호관 설명 위치" loading="lazy"><figcaption><strong>10호관~29호관 설명 위치</strong></figcaption></figure><figure><img id="source-position-19" alt="19호관 설명 첨부 사진" loading="lazy"><figcaption><strong>19호관 설명 첨부 사진</strong></figcaption></figure><figure><img id="source-walk-16-14" alt="16호관에서 14호관으로 가는 길: 보도블록 이동 방향을 빨간 화살표로 표시한 사진" loading="lazy"><figcaption><strong>16호관 → 14호관 이동</strong><span>사진에 표시된 화살표를 참고해 차량 돌길 대신 보도블록으로 이동합니다.</span></figcaption></figure></div></article></div></div></section>
+  <section data-section="route" hidden aria-labelledby="route-title"><div class="section-heading"><div><p class="eyebrow">03 · TOUR ROUTE</p><h1 id="route-title">투어 동선</h1><p class="muted">기본 순서를 익히고, 당일 조건에 맞게 조정합니다.</p></div><span class="pill">원문 기준 약 1.5km · 약 60분</span></div><div class="notice"><strong>고정 동선이 아닙니다</strong><span>시작 장소·날씨·인원·접근성·행사 상황에 따라 변경하며 설명 대상 건물은 빠지지 않도록 확인합니다.</span></div><div class="route-grid"><article class="panel"><h2>기본 진행 순서</h2><ol class="route-list" id="route-list"></ol></article><div><article class="panel"><h2>동선 지도</h2><img id="source-map" class="map" alt="원문에 포함된 송도캠퍼스 투어 동선 지도. 빨간 경로와 노란 화살표가 표시되어 있음" loading="lazy"><p class="small muted">제공 원문의 지도 이미지입니다. 지도 속 시설명·입점·경로가 현재와 다를 수 있습니다. 전체 실제 보행 동선은 현장 교육으로 확인하세요.</p></article><article class="panel"><h2>당일 동선 조정</h2><p>원문은 근로자 시위가 있는 경우 팻말을 피하는 동선을 제시합니다. 실제 운영은 통행·안전·현장 안내에 따라 조정합니다.</p><p class="small muted">건물별 설명 위치와 사진은 건물별 학습에서 확인하세요.</p></article></div></div></section>
  </main><footer>INU DREAM-i · 26기 캠퍼스투어 교육 매뉴얼 <span>v1.0 · 원문 기반 교육용 초안</span></footer>
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
@@ -241,7 +251,11 @@ window.MANUAL = {
         "이사장실·총장실·부총장실과 등록금·입학·성적 관련 기능을 중고등학교 행정실에 비유한다.",
         "운영: 단체사진 촬영 후 이동. 원문 권장 비율은 가로 4:3, 세로 9:16. 촬영과 게시 동의를 먼저 확인한다."
       ],
-      "position": ""
+      "position": "",
+      "locationPhoto": {
+        "caption": "1호관 설명 위치",
+        "hint": ""
+      }
     },
     {
       "id": "itcenter",
@@ -255,7 +269,11 @@ window.MANUAL = {
       "detail": [
         "컴퓨터실에 비유하여 설명한다. 원문은 교내 와이파이와 AI사고와 데이터 리터러시 등 컴퓨팅 수업 활용을 소개한다."
       ],
-      "position": "1호관 → 24호관 이동 중 소개. 보행에 집중하며 필요하면 안전한 곳에 멈춘다."
+      "position": "1호관 → 24호관 이동 중 소개. 보행에 집중하며 필요하면 안전한 곳에 멈춘다.",
+      "locationPhoto": {
+        "caption": "4호관 설명 위치",
+        "hint": "1호관 → 24호관 이동 중 소개. 보행에 집중하며 필요하면 안전한 곳에 멈춘다."
+      }
     },
     {
       "id": "tower",
@@ -269,9 +287,35 @@ window.MANUAL = {
       "detail": [
         "UNI Land에는 각국 시간을 보여주는 시계와 리클라이너가 있어 휴식할 수 있다.",
         "주변 경관 소재: 인천신항·팔미도·영종도·인천대교·포스코타워·셀트리온·삼성바이오로직스. 당일 실제 보이는 경관에 맞춰 설명한다.",
-        "여기서 41호관 바이오컴플렉스도 소개한다. 자세한 학부 구성은 29·41호관 카드 참고."
+        "여기서 41호관 바이오컴플렉스도 소개한다. 자세한 학부 구성은 41호관과 29호관의 개별 카드 참고."
       ],
       "position": "41호관이 잘 보이는 안전한 보행 공간에서 설명한다."
+    },
+    {
+      "id": "biocomplex",
+      "num": "41",
+      "title": "바이오컴플렉스 · 생명과학부",
+      "kind": "단과대",
+      "depts": [
+        "생명과학부 → 생명과학전공·분자의생명전공"
+      ],
+      "core": [
+        "41호관 바이오컴플렉스는 생명과학기술대학 생명과학부가 사용하는 건물이다.",
+        "송도 바이오산업 집적지의 지리적 이점을 바탕으로 생명과학과 생명공학을 탐구한다."
+      ],
+      "detail": [
+        "원문: 바이오컴플렉스는 2024년 신축.",
+        "생명과학기술대학은 생명공학부·생명과학부의 2개 학부와 4개 전공으로 구성된다.",
+        "4개 전공 중 원하는 전공을 선택해 지원할 수 있다고 원문에 기재되어 있다."
+      ],
+      "position": "전망타워 근처에서 41호관이 보이는 보행 공간에 모여 설명한다.",
+      "locationPhoto": {
+        "caption": "41호관 설명 위치",
+        "hint": "사진의 빨간 테두리로 표시된 위치를 참고해 41호관을 소개합니다.",
+        "mediaId": "position41",
+        "imageId": "source-position-41",
+        "alt": "41호관 설명 위치: 전망타워 앞 보행 공간에 빨간 테두리로 표시한 장소"
+      }
     },
     {
       "id": "science",
@@ -294,38 +338,34 @@ window.MANUAL = {
         "패션산업학과는 원문에서 인문계열이지만 자연과학대학 소속으로 설명한다. 디자인뿐 아니라 섬유재료·염색 기술 등 과학적 지식도 배우는 융복합 교육 사례다.",
         "이동 중 중앙 잔디의 피크닉·축제 분위기를 소개할 수 있다."
       ],
-      "position": ""
+      "position": "",
+      "locationPhoto": {
+        "caption": "5호관 설명 위치",
+        "hint": ""
+      }
     },
     {
       "id": "library",
       "num": "06",
-      "title": "학산도서관",
+      "title": "학산도서관 · 이룸관",
       "kind": "시설",
       "depts": [],
       "core": [
-        "이름은 인천의 교육·도서관 기능을 했던 학산서원에서 유래했다. 자료 열람과 개인 학습을 돕고 RFID 기반 대출·반납 시스템을 갖춘 공간으로 소개한다."
+        "이름은 인천의 교육·도서관 기능을 했던 학산서원에서 유래했다. 자료 열람과 개인 학습을 돕고 RFID 기반 대출·반납 시스템을 갖춘 공간으로 소개한다.",
+        "이룸관: 학산도서관과 연결된 디지털 학습·협업 공간이다. 미디어룸·스타트업존·프레젠테이션룸·세미나룸·ICT 라운지를 갖춰 정보와 지식을 생산하는 복합문화 공간으로 소개한다.",
+        "건축상 수상 경력도 자랑거리다. 원문에는 2023년 인천시 건축상 대상, 2025년 한국건축문화대상 본상이 기재되어 있다."
       ],
       "detail": [
         "원문: 학산서원은 1702년, 학산도서관 명명은 2001년.",
         "원문: 열람실 1,900석, 장서 141만여 권. 자동 대출·반납과 모바일 앱 이용 가능이라고 기재되어 있다.",
-        "호텔 델루나·사랑의 온도 등의 드라마 촬영지라는 일화도 선택 소개한다."
+        "호텔 델루나·사랑의 온도 등의 드라마 촬영지라는 일화도 선택 소개한다.",
+        "이룸관: 원문 기준 2022년 신설. 자료 보존·개인 학습 중심인 학산도서관과 비교해 ICT 기반의 동적인 도서관이라는 차이를 설명한다."
       ],
-      "position": ""
-    },
-    {
-      "id": "irum",
-      "num": "06 연결",
-      "title": "이룸관",
-      "kind": "시설",
-      "depts": [],
-      "core": [
-        "학산도서관과 연결된 디지털 학습·협업 공간이다. 미디어룸·스타트업존·프레젠테이션룸·세미나룸·ICT 라운지를 갖춰 정보와 지식을 생산하는 복합문화 공간으로 소개한다.",
-        "건축상 수상 경력도 자랑거리다. 원문에는 2023년 인천시 건축상 대상, 2025년 한국건축문화대상 본상이 기재되어 있다."
-      ],
-      "detail": [
-        "원문 기준 2022년 신설. 자료 보존·개인 학습 중심인 학산도서관과 비교해 ICT 기반의 동적인 도서관이라는 차이를 설명한다."
-      ],
-      "position": ""
+      "position": "",
+      "locationPhoto": {
+        "caption": "6호관 설명 위치",
+        "hint": ""
+      }
     },
     {
       "id": "ict",
@@ -344,7 +384,11 @@ window.MANUAL = {
         "전문 IT 인재 육성을 위한 독립 단과대학이다.",
         "원문 실적: 2012년 자체평가 이공계열 우수학과, 2015~2021년 자체평가 산학연구성과 1위."
       ],
-      "position": ""
+      "position": "",
+      "locationPhoto": {
+        "caption": "7호관 설명 위치",
+        "hint": ""
+      }
     },
     {
       "id": "engineering",
@@ -369,7 +413,11 @@ window.MANUAL = {
         "원문 기준 국내 안전공학과는 16개이며, 수도권에는 인천대와 서울과학기술대 2곳이 있다.",
         "학과 구성은 모두 숙지하되 실제 발표에서는 4개 정도를 예로 들고 “등”으로 정리할 수 있다."
       ],
-      "position": ""
+      "position": "8호관 보도에서 10·27·28·29호관을 묶어 설명하고 차도로 접근하지 않습니다.",
+      "locationPhoto": {
+        "caption": "8호관 설명 위치",
+        "hint": "8호관 보도에서 10·27·28·29호관을 묶어 설명하고 차도로 접근하지 않습니다."
+      }
     },
     {
       "id": "guest",
@@ -383,7 +431,14 @@ window.MANUAL = {
       "detail": [
         "뒤편 샐러디는 학생 식사 공간의 선택 소재다."
       ],
-      "position": "8호관 쪽 보도에서 27·28·29호관과 함께 설명한다. 차도 접근 주의."
+      "position": "8호관 쪽 보도에서 27·28·29호관과 함께 설명한다. 차도 접근 주의.",
+      "locationPhoto": {
+        "caption": "10호관 설명 위치",
+        "hint": "8호관 쪽 보도에서 27·28·29호관과 함께 설명한다. 차도 접근 주의.",
+        "mediaId": "position1029",
+        "imageId": "source-position-10-29",
+        "alt": "10호관~29호관 설명 위치"
+      }
     },
     {
       "id": "lab",
@@ -421,22 +476,22 @@ window.MANUAL = {
     },
     {
       "id": "bio",
-      "num": "29 · 41",
-      "title": "생명과학기술대학",
+      "num": "29",
+      "title": "생명과학기술대학 · 생명공학부",
       "kind": "단과대",
       "depts": [
-        "생명공학부 → 생명공학전공·나노바이오전공",
-        "생명과학부 → 생명과학전공·분자의생명전공"
+        "생명공학부 → 생명공학전공·나노바이오전공"
       ],
       "core": [
-        "2개 학부·4개 전공의 구성과 건물 역할이 핵심이다. 원문 기준 29호관은 생명공학부, 41호관 바이오컴플렉스는 생명과학부가 사용한다.",
+        "29호관은 생명과학기술대학 생명공학부가 사용하는 건물이다.",
         "송도 바이오산업 집적지의 지리적 이점을 바탕으로 생명과학과 생명공학을 탐구한다."
       ],
       "detail": [
-        "원문: 생명과학기술대학은 2012년 신설, 바이오컴플렉스는 2024년 신축.",
+        "원문: 생명과학기술대학은 2012년 신설.",
+        "생명과학기술대학은 생명공학부·생명과학부의 2개 학부와 4개 전공으로 구성된다.",
         "4개 전공 중 원하는 전공을 선택해 지원할 수 있다고 원문에 기재되어 있다."
       ],
-      "position": "41호관은 전망타워 근처에서, 29호관은 8호관 쪽 보도에서 소개한다."
+      "position": "8호관 쪽 안전한 보도에서 10·27·28호관과 함께 설명한다."
     },
     {
       "id": "dorm",
@@ -452,7 +507,11 @@ window.MANUAL = {
         "원문: 1기숙사 2인실 → 1인실 변경, 추가 기숙사 건설 중.",
         "원문 선발: 거리점수+성적+기숙사 벌점. 1학기 입사 시 1년 입사 보장이라고 기재되어 있다."
       ],
-      "position": ""
+      "position": "",
+      "locationPhoto": {
+        "caption": "기숙사 설명 위치",
+        "hint": ""
+      }
     },
     {
       "id": "student",
@@ -487,21 +546,34 @@ window.MANUAL = {
         "원문: 2025년 신설. 자유전공학부는 1년간 진로를 탐색한 뒤 전공을 선택한다고 설명한다.",
         "원문은 사범대학·예술체육대학·동북아국제통상학부 스마트물류공학전공을 제외한 47개 학과·전공의 선택권을 100% 보장하고 성적·정원 제한이 없다고 기재한다."
       ],
-      "position": "19호관 뒤편으로 이동하지 않는다. 17호관과 16호관 사이에서 설명한다."
+      "position": "19호관 뒤편으로 이동하지 않는다. 17호관과 16호관 사이에서 설명한다.",
+      "locationPhoto": {
+        "caption": "19호관 설명 위치",
+        "hint": "19호관 뒤편으로 이동하지 않는다. 17호관과 16호관 사이에서 설명한다.",
+        "mediaId": "position19",
+        "imageId": "source-position-19",
+        "alt": "19호관 설명 첨부 사진"
+      }
     },
     {
-      "id": "sport",
-      "num": "20 · 21 · 22",
-      "title": "스포츠시설 · 학군단",
+      "id": "welfare",
+      "num": "11",
+      "title": "복지회관 · 클라이밍장",
       "kind": "시설",
       "depts": [],
       "core": [
-        "20호관 스포츠센터, 21호관 실내체육관, 22호관 학군단(ROTC), 운동장·농구장을 구분한다."
+        "학생식당과 서점·은행·우체국·문화카페·스터디룸 등 학생 편의시설이 모여 있다. 클라이밍장에서는 수업과 동아리 활동이 이루어진다고 소개한다."
       ],
       "detail": [
-        "원문상 시간이 남으면 소개하는 선택 구간이다. 스포츠센터 재학생 제휴 할인과 운동장의 체육대회·축구·축제 활용을 소개할 수 있다."
+        "원문 식당: 약 700명 수용, 식사 가격 5,000~7,000원.",
+        "원문 층별 안내: 1층 서점·은행·우체국, 2층 문구점·미용실·안경점·문화카페·소극장, 3층 스터디룸 등.",
+        "소극장은 강연·행사와 인인극회 동아리 연극 등의 소재로 소개한다."
       ],
-      "position": ""
+      "position": "11호관에서 투어를 시작할 때에는 예술체육대학부터 출발하는 편이 효율적일 수 있습니다.",
+      "locationPhoto": {
+        "caption": "11호관 설명 위치",
+        "hint": "11호관에서 투어를 시작할 때에는 예술체육대학부터 출발하는 편이 효율적일 수 있습니다."
+      }
     },
     {
       "id": "arts",
@@ -523,37 +595,14 @@ window.MANUAL = {
         "학과 구성과 대표 인물 사례를 먼저 숙지한다.",
         "포스터가 있으면 수상경력을 가리키며 소개한다. 원문 기재: 장민희 도쿄올림픽 금메달, 이광연 U-20 월드컵 준우승, 김소영 도쿄올림픽 동메달."
       ],
-      "position": ""
-    },
-    {
-      "id": "welfare",
-      "num": "11",
-      "title": "복지회관 · 클라이밍장",
-      "kind": "시설",
-      "depts": [],
-      "core": [
-        "학생식당과 서점·은행·우체국·문화카페·스터디룸 등 학생 편의시설이 모여 있다. 클라이밍장에서는 수업과 동아리 활동이 이루어진다고 소개한다."
-      ],
-      "detail": [
-        "원문 식당: 약 700명 수용, 식사 가격 5,000~7,000원.",
-        "원문 층별 안내: 1층 서점·은행·우체국, 2층 문구점·미용실·안경점·문화카페·소극장, 3층 스터디룸 등.",
-        "소극장은 강연·행사와 인인극회 동아리 연극 등의 소재로 소개한다."
-      ],
-      "position": ""
-    },
-    {
-      "id": "convention",
-      "num": "12",
-      "title": "컨벤션센터",
-      "kind": "시설",
-      "depts": [],
-      "core": [
-        "대형 강의실이 모여 있으며 주로 교양 수업에 활용되는 건물로 소개한다."
-      ],
-      "detail": [
-        "계단 구간에서 인천대학교에서 가장 높은 언덕이라는 이야기와 전과자 영상, 인천대 출신 PD 이야기를 선택 소재로 연결할 수 있다."
-      ],
-      "position": "계단에서는 보행을 우선하고 학생들이 안전하게 멈춘 뒤 설명한다."
+      "position": "16~14호관은 차량 돌길 대신 보도를 이용합니다.",
+      "locationPhoto": {
+        "caption": "16호관 → 14호관 이동",
+        "hint": "사진의 화살표를 따라 차량 돌길 대신 보도블록으로 이동합니다.",
+        "mediaId": "walk1614",
+        "imageId": "source-walk-16-14",
+        "alt": "16호관에서 14호관으로 가는 길: 보도블록 이동 방향을 빨간 화살표로 표시한 사진"
+      }
     },
     {
       "id": "humanities",
@@ -575,28 +624,25 @@ window.MANUAL = {
         "어학은 언어의 성질을, 문학은 언어를 통해 읽고 쓰는 활동을 연구한다. 다양한 언어를 사용하는 교환학생 이야기도 소개 소재다.",
         "중어중문학과가 아닌 중어중국학과라는 이름을 중국 전반에 대한 학습 특징과 연결해 설명한다."
       ],
-      "position": ""
+      "position": "",
+      "locationPhoto": {
+        "caption": "15호관 설명 위치",
+        "hint": ""
+      }
     },
     {
-      "id": "social",
-      "num": "13",
-      "title": "사회과학대학 · 법학부",
-      "kind": "단과대",
-      "depts": [
-        "사회과학대학 → 미디어커뮤니케이션학과·창의인재개발학과·문헌정보학과·사회복지학과",
-        "법학부 → 원문에 별도 병기(사회과학대학 소속으로 단정하지 않음)",
-        "함께 사용하는 학과 → 글로벌정경대학 정치외교학과·행정학과"
-      ],
+      "id": "convention",
+      "num": "12",
+      "title": "컨벤션센터",
+      "kind": "시설",
+      "depts": [],
       "core": [
-        "핵심 학과 · 창의인재개발학과: 기업·조직에서 창의적 문제 해결력을 갖춘 인재를 선발하고 교육하는 전문가를 기른다.",
-        "핵심 학과 · 미디어커뮤니케이션학과: 저널리즘·방송·영상·광고마케팅을 배우고 관련 분야로 진출한다."
+        "대형 강의실이 모여 있으며 주로 교양 수업에 활용되는 건물로 소개한다."
       ],
       "detail": [
-        "원문은 창의인재개발학과가 전국 최초로 대학 학부과정에 설립되었다고 설명한다.",
-        "미디어커뮤니케이션학과는 신문방송학과의 명칭 변경으로 소개되어 있다. 런닝맨·전과자들 연출 고동완 PD 동문 사례도 활용한다.",
-        "행정학과는 공공문제와 시민사회의 관계를 포괄적으로 연구한다. 원문: 교수 3분의 1 외국인, 강의 60% 이상 영어."
+        "계단 구간에서 인천대학교에서 가장 높은 언덕이라는 이야기와 전과자 영상, 인천대 출신 PD 이야기를 선택 소재로 연결할 수 있다."
       ],
-      "position": ""
+      "position": "계단에서는 보행을 우선하고 학생들이 안전하게 멈춘 뒤 설명한다."
     },
     {
       "id": "business",
@@ -619,6 +665,31 @@ window.MANUAL = {
         "중요: 원문은 26학번부터 4년 전액 장학금 요건이 변경되어 상위 20%만 수령하고 평균 평점에 따라 우선순위를 재배정한다고 설명한다.",
         "글로벌정경대학의 행정학과·정치외교학과는 원문상 13호관도 사용한다."
       ],
+      "position": "",
+      "locationPhoto": {
+        "caption": "14호관 설명 위치",
+        "hint": ""
+      }
+    },
+    {
+      "id": "social",
+      "num": "13",
+      "title": "사회과학대학 · 법학부",
+      "kind": "단과대",
+      "depts": [
+        "사회과학대학 → 미디어커뮤니케이션학과·창의인재개발학과·문헌정보학과·사회복지학과",
+        "법학부 → 원문에 별도 병기(사회과학대학 소속으로 단정하지 않음)",
+        "함께 사용하는 학과 → 글로벌정경대학 정치외교학과·행정학과"
+      ],
+      "core": [
+        "핵심 학과 · 창의인재개발학과: 기업·조직에서 창의적 문제 해결력을 갖춘 인재를 선발하고 교육하는 전문가를 기른다.",
+        "핵심 학과 · 미디어커뮤니케이션학과: 저널리즘·방송·영상·광고마케팅을 배우고 관련 분야로 진출한다."
+      ],
+      "detail": [
+        "원문은 창의인재개발학과가 전국 최초로 대학 학부과정에 설립되었다고 설명한다.",
+        "미디어커뮤니케이션학과는 신문방송학과의 명칭 변경으로 소개되어 있다. 런닝맨·전과자들 연출 고동완 PD 동문 사례도 활용한다.",
+        "행정학과는 공공문제와 시민사회의 관계를 포괄적으로 연구한다. 원문: 교수 3분의 1 외국인, 강의 60% 이상 영어."
+      ],
       "position": ""
     }
   ]
@@ -632,7 +703,7 @@ window.SOURCE_MEDIA = {"1":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAA
 'use strict';
 const D=window.MANUAL, $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const aliases={science:'자연대',ict:'정보대',engineering:'공대',urban:'도시대',bio:'생명대 바이오컴플렉스',arts:'예체대',humanities:'인문대',social:'사회대',business:'글정경 동북아 경영대',free:'자유전공'};
+const aliases={science:'자연대',ict:'정보대',engineering:'공대',urban:'도시대',bio:'생명대 생명공학',biocomplex:'생명대 바이오컴플렉스 생명과학',arts:'예체대',humanities:'인문대',social:'사회대',business:'글정경 동북아 경영대',free:'자유전공'};
 const key='inu-manual-26-v1', validKeys=new Set(D.cards.map(c=>'learn-'+c.id));
 let state={},storageOK=true,query='',filter='all',mode='core',photos={};
 try{const probe=key+'-probe';localStorage.setItem(probe,'1');localStorage.removeItem(probe);const saved=JSON.parse(localStorage.getItem(key)||'{}');if(saved && typeof saved==='object')for(const k of validKeys)if(saved[k]===true)state[k]=true;}catch{storageOK=false;}
@@ -642,13 +713,18 @@ function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');cl
 function persist(){try{localStorage.setItem(key,JSON.stringify(state));}catch{storageOK=false;}updateCounts();}
 function updateCounts(){const learned=D.cards.filter(c=>state['learn-'+c.id]).length;$('#learn-count').textContent=`${learned} / ${D.cards.length}`;if(!storageOK)toast('숙지 상태를 저장할 수 없습니다. 현재 화면에서만 유지됩니다.');}
 function formatCore(s){const match=s.match(/^(핵심 (?:학과|학부) · [^:]+): (.+)$/);return match?'<strong class="core-label">'+esc(match[1])+': </strong><span>'+esc(match[2])+'</span>':esc(s);}
+function renderLocation(c){
+ const photo=c.locationPhoto;if(!photo)return '';
+ const image=photo.mediaId?'<img id="'+esc(photo.imageId)+'" alt="'+esc(photo.alt||photo.caption)+'" loading="lazy">':'<div class="building-location-empty"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/><path d="m4 17 5-5 4 4 3-3 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>사진 준비 중</span></div>';
+ return '<figure class="building-location" data-location-for="'+esc(c.id)+'">'+image+'<figcaption><strong>'+esc(photo.caption)+'</strong>'+(photo.hint?'<span>'+esc(photo.hint)+'</span>':'')+'</figcaption></figure>';
+}
 function renderCards(){
- $('#cards').innerHTML=D.cards.map(c=>`<article class="card ${state['learn-'+c.id]?'is-learned':''}" id="building-${c.id}" data-id="${c.id}"><div class="card-head"><span class="building-num">${esc(c.num)}</span><div><span class="card-kind">${esc(c.kind)} · ${c.id==='irum'?'6호관 연결':esc(c.num)+'호관'}</span><h3>${esc(c.title).replaceAll(' · ','&nbsp;· ')}</h3></div></div><div class="card-body"><span class="badge">${c.id==='sport'?'추가 참고 · 선택 소개':'필수 숙지'}</span>${c.depts.length?`<h4 class="small">학과·학부 구성</h4><div class="dept-list">${c.depts.map(s=>`<span${s.includes("→")?' class="dept-group"':""}>${esc(s)}</span>`).join('')}</div>`:''}${c.core.map(s=>`<p class="core-text">${formatCore(s)}</p>`).join('')}<details class="extra"><summary>추가 참고 · 상세 설명</summary><ul>${c.detail.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>${c.position?`<p class="position"><b>설명 위치·운영</b><br>${esc(c.position)}</p>`:''}</details></div><div class="card-footer"><label class="learn-check"><input type="checkbox" data-check="learn-${c.id}" ${state['learn-'+c.id]?'checked':''}><span>학과·핵심 특징 숙지 완료</span></label></div></article>`).join('');
+ $('#cards').innerHTML=D.cards.map(c=>`<article class="card ${state['learn-'+c.id]?'is-learned':''}" id="building-${c.id}" data-id="${c.id}"><div class="card-head"><span class="building-num">${esc(c.num)}</span><div><span class="card-kind">${esc(c.kind)} · ${c.id==='irum'?'6호관 연결':esc(c.num)+'호관'}</span><h3>${esc(c.title).replaceAll(' · ','&nbsp;· ')}</h3></div></div><div class="card-body">${renderLocation(c)}<span class="badge">필수 숙지</span>${c.depts.length?`<h4 class="small">학과·학부 구성</h4><div class="dept-list">${c.depts.map(s=>`<span${s.includes("→")?' class="dept-group"':""}>${esc(s)}</span>`).join('')}</div>`:''}${c.core.map(s=>`<p class="core-text">${formatCore(s)}</p>`).join('')}<details class="extra"><summary>추가 참고 · 상세 설명</summary><ul>${c.detail.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>${c.position&&!c.locationPhoto?`<p class="position"><b>설명 위치·운영</b><br>${esc(c.position)}</p>`:''}</details></div><div class="card-footer"><label class="learn-check"><input type="checkbox" data-check="learn-${c.id}" ${state['learn-'+c.id]?'checked':''}><span>학과·핵심 특징 숙지 완료</span></label></div></article>`).join('');
 }
 function norm(s){return String(s).toLowerCase().replace(/(^|\D)0+(\d)/g,'$1$2').replace(/\s+/g,'');}
 function applyFilter(){const tokens=query.trim().split(/\s+/).filter(Boolean).map(norm);let n=0;D.cards.forEach(c=>{const hay=norm([c.title,c.num+'호관',aliases[c.id]||'',c.id,c.kind,...c.depts,...c.core,...c.detail,c.position].join(' '));const show=(filter==='all'||filter===c.kind||(filter==='todo'&&!state['learn-'+c.id]))&&tokens.every(t=>{if(/^\d+호관$/.test(t)){const n=t.replace('호관','');const nums=c.num.startsWith('18-')?['18']:(c.num.match(/\d+/g)||[]).map(x=>String(Number(x)));return nums.includes(n);}return hay.includes(t);});$('#building-'+c.id).hidden=!show;if(show)n++;});$('#results').textContent=`${n} / ${D.cards.length}개 구간`;$('#empty').hidden=n>0;$('#clear-search').hidden=!query;}
 function resetSearch(){query='';filter='all';$('#search').value='';$$('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));applyFilter();}
-function showPage(){let target=location.hash.slice(1)||'learn', building=null;if(target.startsWith('building-')){building=$('#'+target);target='learn';resetSearch();}if(!$$('[data-section]').some(s=>s.dataset.section===target))target='learn';$$('[data-section]').forEach(s=>s.hidden=s.dataset.section!==target);$$('[data-page]').forEach(a=>{const active=a.dataset.page===target;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});if(building){requestAnimationFrame(()=>building.scrollIntoView({block:'start',behavior:'auto'}));}else window.scrollTo({top:0,behavior:'instant'});}
+function showPage(){let target=location.hash.slice(1)||'learn', building=null;if(target==='building-irum')target='building-library';if(target.startsWith('building-')){building=$('#'+target);target='learn';resetSearch();}if(!$$('[data-section]').some(s=>s.dataset.section===target))target='learn';$$('[data-section]').forEach(s=>s.hidden=s.dataset.section!==target);$$('[data-page]').forEach(a=>{const active=a.dataset.page===target;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});if(building){requestAnimationFrame(()=>building.scrollIntoView({block:'start',behavior:'auto'}));}else window.scrollTo({top:0,behavior:'instant'});}
 function setMode(m){mode=m;$$('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));$$('details.extra').forEach(d=>d.open=m==='detail');}
 function showPhoto(src,caption){if(!/^data:image\/(png|jpeg|webp|gif|avif|bmp);base64,/i.test(src))return;$('#large-photo').src=src;$('#large-photo').alt=caption;$('#large-caption').textContent=caption;$('#photo-dialog').showModal();}
 function refreshPhoto(slot){const id=slot.dataset.photo,caption=slot.dataset.caption,p=photos[id];const good=p&&/^data:image\/(png|jpeg|webp|gif|avif|bmp);base64,/i.test(p);slot.classList.toggle('has-photo',!!good);slot.innerHTML=`${good?`<img src="${p}" alt="${esc(caption)}" loading="lazy">`:'<span aria-hidden="true">＋</span>'}<p>${esc(caption)}</p><div class="photo-actions"><button type="button" class="choose-photo">${good?'사진 바꾸기':'사진 선택'}</button>${good?'<button type="button" class="remove-photo">사진 제거</button>':''}</div><input type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" hidden aria-label="${esc(caption)} 사진 선택">`;
@@ -657,7 +733,7 @@ function refreshPhoto(slot){const id=slot.dataset.photo,caption=slot.dataset.cap
  if(good){slot.querySelector('img').onclick=()=>showPhoto(p,caption);slot.querySelector('.remove-photo').onclick=()=>{delete photos[id];refreshPhoto(slot);toast('사진을 제거했습니다. 변경 내용을 파일로 저장하세요.');};}
 }
 renderCards();
-const route=[['intro','홍보관 · 실내 소개','시작 장소는 대관 상황에 따라 변경'],['hq','대학본부','4호관 정보전산원은 이동 중 소개'],['tower','전망타워','41호관 바이오컴플렉스도 함께 소개'],['science','자연과학대학','학과 구성 + 해양학과'],['irum','학산도서관 · 이룸관','열람 공간과 디지털 협업 공간 비교'],['ict','정보기술대학','학과 구성 + 임베디드시스템공학과'],['engineering','공과대학','학과 구성 + 안전공학과'],['urban','도시과학대학','10·27·28·29호관은 8호관 쪽 보도에서'],['bio','생명과학기술대학','29·41호관 역할 구분'],['dorm','기숙사','생활 편의시설 소개'],['arts','예술체육대학','17호관·19호관·운동시설은 이동 중 소개'],['humanities','인문대학','11·12호관을 소개하며 이동'],['social','사회과학대학 · 법학부','행정학과·정치외교학과 건물 사용 구분'],['business','경영대학 · 글로벌정경대학 · 동북아국제통상학부','경영학부·통상학부의 특징 소개'],['intro','홍보관 또는 실외 · 마무리','질의응답 → SNS·퀴즈 → 인사·정리']];
+const route=[["intro","홍보관 · 인천대 소개","홍보관 · 실내 학교 소개"],["hq","대학본부","대학 주요 행정 기능 소개"],["itcenter","정보전산원","이동 중 정보화 지원 기능 소개"],["tower","전망타워","전망타워와 주변 경관 소개"],["biocomplex","바이오컴플렉스 · 생명과학부","전망타워 근처에서 41호관 소개"],["science","자연과학대학","학과 구성 + 해양학과"],["library","학산도서관 · 이룸관","학산도서관과 이룸관을 함께 소개"],["ict","정보기술대학","학과 구성 + 임베디드시스템공학과"],["engineering","공과대학","학과 구성 + 안전공학과"],["guest","게스트하우스","8호관 쪽 보도에서 10·27·28·29호관 소개"],["lab","제2공동실습관","8호관 쪽 보도에서 함께 소개"],["urban","도시과학대학","학과 구성 + 도시행정학과"],["bio","생명과학기술대학 · 생명공학부","29호관 생명공학부 소개"],["dorm","기숙사","기숙사와 생활 편의시설 소개"],["student","학생회관","학생 생활·자치·동아리 공간 소개"],["free","융합자유전공대학","17호관과 16호관 사이에서 설명"],["welfare","복지회관 · 클라이밍장","학생 편의시설과 클라이밍장 소개"],["arts","예술체육대학","학과 구성과 대표 인물 소개"],["humanities","인문대학","학과 구성 + 중어중국학과"],["convention","컨벤션센터","교양 수업 공간 소개"],["business","경영대학 · 글로벌정경대학 · 동북아국제통상학부","경영학부·동북아국제통상학부 소개"],["social","사회과학대학 · 법학부","행정학과·정치외교학과 건물 사용 구분"],["intro","홍보관 또는 실외 · 마무리","질의응답 → SNS·퀴즈 → 인사·정리"]];
 $('#route-list').innerHTML=route.map(([id,title,desc])=>`<li><a href="#building-${id}">${title}</a><small>${desc}</small></li>`).join('');
 [['#source-equipment-1','1'],['#source-equipment-2','2'],['#source-map','3'],['#source-position-41','position41'],['#source-position-10-29','position1029'],['#source-position-19','position19'],['#source-walk-16-14','walk1614']].forEach(([sel,id])=>{const img=$(sel);img.src=window.SOURCE_MEDIA[id];img.onclick=()=>showPhoto(img.src,img.alt);img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-label',img.alt+' 크게 보기');img.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();img.click();}};});
 $$('.photo-slot').forEach(refreshPhoto);
