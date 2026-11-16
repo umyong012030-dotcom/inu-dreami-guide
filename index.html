@@ -186,6 +186,12 @@
 @media screen and (max-width:760px){.brand{flex-direction:row;align-items:center;gap:18px}.brand-logo{width:69px;height:auto}.brand>span{font-size:23px}.brand small{font-size:10px;margin-top:4px}.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding:28px 24px}.mascot-guide{display:flex;flex-direction:row;justify-content:space-between;gap:16px}.mascot-stage{width:103px;height:154px;border-width:3px;border-radius:58px 58px 16px 16px;padding:26px 8px 7px;flex-shrink:0}.hero-mascot{height:120px}.mascot-cohort{font-size:6px;letter-spacing:.5px;top:11px}.mascot-guide>a{font-size:12px;line-height:1.8}.location-editor-bar{gap:8px;margin-top:18px}.location-editor-bar p{flex-basis:100%;margin-top:0}.location-photo-controls button{min-height:44px}}
 @media print{.location-editor-bar,.location-photo-controls,.mascot-guide{display:none!important}}
 
+.location-notice{font-size:13px;line-height:1.85;padding:13px 16px;border:1px solid #e6d5b5;border-radius:10px;background:#fff9ed;color:#745526;margin:0 0 20px}
+.practice-ratio-figure{margin:0}.practice-ratio-image{display:block;width:100%;height:auto;max-height:600px;object-fit:contain;background:#f4f6fa;border:1px solid var(--line);border-radius:10px;cursor:zoom-in}
+.practice-ratio-controls{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 12px}.practice-ratio-controls button{font-size:13px;min-height:44px}.practice-ratio-controls button:first-child{color:var(--blue);border-color:#b9cde9;background:#f6f9ff}.practice-ratio-controls button:disabled{opacity:.55;cursor:wait}
+.practice-ratio-panel #practice-ratio-note{font-size:13px;margin:0;line-height:1.8}
+@media print{.practice-ratio-controls,#practice-ratio-note{display:none!important}.practice-ratio-image{max-height:300px}}
+
 </style>
 </head>
 <body>
@@ -206,6 +212,7 @@
   <section data-section="learn" aria-labelledby="learn-title">
    <div class="hero"><div class="hero-copy"><p class="eyebrow">26기 드림이를 위한 현장 가이드</p><h1 id="learn-title">캠퍼스를 이해하고,<br>자신 있게 안내하기.</h1><p>학과 구성과 핵심 학과, 시설의 자랑거리부터.<br>외울 내용은 선명하게, 필요한 설명은 충분하게.</p><div class="hero-tags"><span>필수 숙지</span><span>추가 참고</span><span>실무교육</span></div></div><div class="hero-index mascot-guide"><div class="mascot-stage"><span class="mascot-cohort">26TH · DreamWE</span><img class="hero-mascot" data-brand-image="inuMascot" width="1437" height="2596" alt="인천대학교 마스코트 횃불이"></div><a href="#practice">투어 운영 준비하기 ↗</a></div></div>
    <div class="section-heading"><div><p class="eyebrow">01 · CAMPUS KNOWLEDGE</p><h2>건물별 학습</h2></div><div class="learning-count"><strong id="learn-count">0 / 22</strong><span>숙지 완료</span></div></div>
+   <div class="location-notice" id="location-notice">위 사항은 공사 등으로 인해 언제든 위치 변동은 일어날 수 있고 모든 것은 현장 판단 아래 진행됨</div>
    <div class="tools"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="건물 번호, 단과대, 학과로 검색" aria-label="건물·학과·설명 검색"><button id="clear-search" aria-label="검색어 지우기" hidden>×</button></label><div class="mode" role="group" aria-label="설명 보기"><button data-mode="core" aria-pressed="true">핵심 보기</button><button data-mode="detail" aria-pressed="false">상세 보기</button></div></div>
    <div class="filter-row"><div class="filters" role="group" aria-label="건물 종류"><button data-filter="all" aria-pressed="true">전체</button><button data-filter="단과대" aria-pressed="false">단과대·학부</button><button data-filter="시설" aria-pressed="false">주요 시설</button><button data-filter="todo" aria-pressed="false">미숙지</button></div><div class="filter-meta"><p id="results" role="status" aria-live="polite"></p><button id="reset-learning" class="quiet">숙지 체크 초기화</button></div></div>
    <div class="location-editor-bar"><button id="toggle-location-editor" type="button" aria-pressed="false" aria-controls="location-editor-note" disabled>위치 사진 편집</button><p id="location-editor-note" hidden>모든 건물의 위치 사진을 선택하거나 교체할 수 있습니다. 선택한 사진은 이 브라우저에 저장되며 다른 방문자에게는 보이지 않습니다.</p></div>
@@ -226,6 +233,7 @@
     <article class="panel"><span class="step">F / 설명·개인정보</span><h2>모르는 정보는 확인 후 전달하기</h2><ul><li>개인 입학 성적·민감정보·개인 SNS ID 등 문제 소지가 있는 개인정보는 공유하지 않습니다.</li><li>입시 질문은 최신 공식 모집요강과 입학 담당 부서에서 확인하도록 안내합니다. 원문 시나리오는 진학사·유웨이어플라이 등도 언급합니다.</li><li>말을 잘못했다면 인정하고 정확한 내용으로 정정합니다. 확신이 없는 제도·수치는 추측하지 않습니다.</li><li>야외에서는 핵심 학과와 학생 관심 내용을 중심으로 설명합니다. 모든 학과는 숙지하되 발표 때에는 일부만 예로 들어도 됩니다.</li></ul></article>
     <article class="panel"><span class="step">G / 촬영·마무리</span><h2>동의 확인부터 원위치 정리까지</h2><ul><li>투어가 마무리 시 인스타그램에 오늘 찍은 사진이 올라갈 수 있는데 괜찮을까요? 라고 하면서 동의를 받을 수 있는 분위기 형성.(특수학교의 경우에는 정면 촬영을 꺼리기 때문에 사전에 선생님들께 물어보고 촬영 진행. 만약 정면 촬영이 어려우면 뒷 모습 활동사진으로 대체)</li><li>학교 공식·드림이 인스타그램, 학교 공식 유튜브를 안내합니다. 퀴즈는 지급할 기념품 수만큼 준비합니다.</li><li>마무리 장소는 원래 시작 장소 또는 실외에서 캠투장이 시간·상황에 따라 판단합니다.</li><li>이중 투어로 명단 작성이 어려운 경우 원문은 이름을 확인해 종료 후 기재하도록 안내합니다. 명단은 정해진 업무 절차로만 처리합니다.</li><li>기자재·쓰레기·분실물을 확인합니다. 분실물은 학교별 캠퍼스투어 연락방에 보고하고 남은 기념품은 제자리에 정리합니다. 종이백은 홍보대사실 제자리에 정리합니다.</li></ul></article>
    </div>
+   <article class="panel practice-ratio-panel" aria-labelledby="practice-ratio-title"><span class="step">촬영 참고</span><h2 id="practice-ratio-title">캠퍼스투어 사진 비율</h2><div id="practice-ratio-photo"></div><p id="practice-ratio-note" class="small muted">첨부한 사진은 이 브라우저에 저장되며 다른 방문자에게는 보이지 않습니다.</p></article>
    <article class="panel"><span class="step">H / 실내투어</span><h2>같은 내용을 더 자세히, 학생을 보며 설명하기</h2><p>야외와 핵심 내용은 같고 설명 순서가 달라집니다. 이동 시간이 없는 만큼 추가 참고 설명과 질문을 활용합니다. PPT·태블릿·대본을 보아도 되지만 화면만 읽지 않고 학생들과 눈을 맞춥니다.</p><details><summary>환영·마무리 인사 예시</summary><p>“안녕하세요. 저희는 인천대학교 홍보대사 드림이 26기 ○○○, ○○○입니다. 캠퍼스투어에 와주셔서 감사합니다.”</p><p>“지금까지 인천대학교 홍보대사 드림이 26기 ○○○, ○○○였습니다. 감사합니다.”</p></details></article>
   </section>
   <section data-section="route" hidden aria-labelledby="route-title"><div class="section-heading"><div><p class="eyebrow">03 · TOUR ROUTE</p><h1 id="route-title">투어 동선</h1><p class="muted">기본 순서를 익히고, 당일 조건에 맞게 조정합니다.</p></div><span class="pill">원문 기준 약 1.5km · 약 60분</span></div><div class="notice"><strong>고정 동선이 아닙니다</strong><span>시작 장소·날씨·인원·접근성·행사 상황에 따라 변경하며 설명 대상 건물은 빠지지 않도록 확인합니다.</span></div><div class="route-grid"><article class="panel"><h2>기본 진행 순서</h2><ol class="route-list" id="route-list"></ol></article><div><article class="panel"><h2>전체 동선 요약</h2><img id="source-map" class="map" alt="원문에 포함된 송도캠퍼스 투어 동선 지도. 빨간 경로와 노란 화살표가 표시되어 있음" loading="lazy"></article><article class="panel route-ending" aria-labelledby="route-ending-title">
@@ -276,7 +284,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "3호관 설명 위치",
-        "hint": "",
+        "hint": "야외 투어 전 간단한 학교 소개",
         "mediaId": null,
         "imageId": "source-position-intro",
         "alt": "3호관 설명 위치 사진"
@@ -298,7 +306,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "1호관 설명 위치",
-        "hint": "",
+        "hint": "설명하는 드림이는 건물을 등지고 학생들이 건물을 보면서 설명을 들을 수 있도록 함.",
         "mediaId": "position1",
         "imageId": "source-position-1",
         "alt": "1호관 설명 위치 사진"
@@ -319,7 +327,7 @@ window.MANUAL = {
       "position": "1호관 → 24호관 이동 중 소개. 보행에 집중하며 필요하면 안전한 곳에 멈춘다.",
       "locationPhoto": {
         "caption": "4호관 설명 위치",
-        "hint": "1호관 → 24호관 이동 중 소개. 보행에 집중하며 필요하면 안전한 곳에 멈춘다.",
+        "hint": "설명하는 드림이는 건물을 등지고 학생들이 건물을 보면서 설명을 들을 수 있도록 함.",
         "mediaId": "position4",
         "imageId": "source-position-4",
         "alt": "4호관 설명 위치 사진"
@@ -342,7 +350,7 @@ window.MANUAL = {
       "position": "41호관이 잘 보이는 안전한 보행 공간에서 설명한다.",
       "locationPhoto": {
         "caption": "24호관 설명 위치",
-        "hint": "41호관이 잘 보이는 안전한 보행 공간에서 설명한다.",
+        "hint": "41호관 설명 이전에 전망대 앞으로 와서 설명",
         "mediaId": null,
         "imageId": "source-position-tower",
         "alt": "24호관 설명 위치 사진"
@@ -368,7 +376,7 @@ window.MANUAL = {
       "position": "전망타워 근처에서 41호관이 보이는 보행 공간에 모여 설명한다.",
       "locationPhoto": {
         "caption": "41호관 설명 위치",
-        "hint": "사진의 빨간 테두리로 표시된 위치를 참고해 41호관을 소개합니다.",
+        "hint": "24호관 설명을 마치고서 학생들이 잘 보이도록 2 - 3m 정도만 전망대 옆으로 이동",
         "mediaId": "position41",
         "imageId": "source-position-41",
         "alt": "41호관 설명 위치: 전망타워 앞 보행 공간에 빨간 테두리로 표시한 장소"
@@ -398,7 +406,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "5호관 설명 위치",
-        "hint": "",
+        "hint": "A동과 B동 사이 보도블럭에서 설명",
         "mediaId": "position5",
         "imageId": "source-position-5",
         "alt": "5호관 설명 위치 사진"
@@ -424,7 +432,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "6호관 설명 위치",
-        "hint": "",
+        "hint": "도서관 이용 학생들과 부딪히지 않도록 통로 지나가기전에 설명",
         "mediaId": "position6",
         "imageId": "source-position-6",
         "alt": "6호관 설명 위치 사진"
@@ -450,7 +458,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "7호관 설명 위치",
-        "hint": "",
+        "hint": "A동과 B동 사이 보도블럭에서 설명",
         "mediaId": "position7",
         "imageId": "source-position-7",
         "alt": "7호관 설명 위치 사진"
@@ -482,7 +490,7 @@ window.MANUAL = {
       "position": "8호관 보도에서 10·27·28·29호관을 묶어 설명하고 차도로 접근하지 않습니다.",
       "locationPhoto": {
         "caption": "8호관 설명 위치",
-        "hint": "8호관 보도에서 10·27·28·29호관을 묶어 설명하고 차도로 접근하지 않습니다.",
+        "hint": "C동 입구 가기 전 초록색 간판 쪽에서 설명",
         "mediaId": "position8",
         "imageId": "source-position-8",
         "alt": "8호관 설명 위치 사진"
@@ -503,7 +511,7 @@ window.MANUAL = {
       "position": "8호관 쪽 보도에서 27·28·29호관과 함께 설명한다. 차도 접근 주의.",
       "locationPhoto": {
         "caption": "10호관 설명 위치",
-        "hint": "8호관 쪽 보도에서 27·28·29호관과 함께 설명한다. 차도 접근 주의.",
+        "hint": "도로변에서 설명해야하므로 안전 각별히 신경 쓸 것",
         "mediaId": "position1029",
         "imageId": "source-position-10-29",
         "alt": "10호관~29호관 설명 위치"
@@ -525,7 +533,7 @@ window.MANUAL = {
       "position": "27호관 쪽으로 건너지 않고 8호관에서 좌회전한 보도에서 함께 설명한다(야외 시나리오 보완).",
       "locationPhoto": {
         "caption": "27호관 설명 위치",
-        "hint": "27호관 쪽으로 건너지 않고 8호관에서 좌회전한 보도에서 함께 설명한다(야외 시나리오 보완).",
+        "hint": "학생들이 건물 위치가 특정 될 수 있도록 손으로 가리키면서 설명",
         "mediaId": null,
         "imageId": "source-position-lab",
         "alt": "27호관 설명 위치 사진"
@@ -551,7 +559,7 @@ window.MANUAL = {
       "position": "8호관 쪽 안전한 보도에서 27·29호관과 함께 설명한다.",
       "locationPhoto": {
         "caption": "28호관 설명 위치",
-        "hint": "8호관 쪽 안전한 보도에서 27·29호관과 함께 설명한다.",
+        "hint": "학생들이 건물 위치가 특정 될 수 있도록 손으로 가리키면서 설명",
         "mediaId": null,
         "imageId": "source-position-urban",
         "alt": "28호관 설명 위치 사진"
@@ -577,7 +585,7 @@ window.MANUAL = {
       "position": "8호관 쪽 안전한 보도에서 10·27·28호관과 함께 설명한다.",
       "locationPhoto": {
         "caption": "29호관 설명 위치",
-        "hint": "8호관 쪽 안전한 보도에서 10·27·28호관과 함께 설명한다.",
+        "hint": "학생들이 건물 위치가 특정 될 수 있도록 설명 위치에서 뒤만 돌아서 설명",
         "mediaId": null,
         "imageId": "source-position-bio",
         "alt": "29호관 설명 위치 사진"
@@ -600,7 +608,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "기숙사 설명 위치",
-        "hint": "",
+        "hint": "17호관 설명 이전에 손으로 가리키면서 건물 위치 특정 될 수 있도록 설명",
         "mediaId": "position18",
         "imageId": "source-position-18",
         "alt": "기숙사 설명 위치 사진"
@@ -623,7 +631,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "17호관 설명 위치",
-        "hint": "",
+        "hint": "설명이 끝나고 UNI ZONE의 UNI 설명할 것",
         "mediaId": null,
         "imageId": "source-position-student",
         "alt": "17호관 설명 위치 사진"
@@ -649,7 +657,7 @@ window.MANUAL = {
       "position": "19호관 뒤편으로 이동하지 않는다. 17호관과 16호관 사이에서 설명한다.",
       "locationPhoto": {
         "caption": "19호관 설명 위치",
-        "hint": "19호관 뒤편으로 이동하지 않는다. 17호관과 16호관 사이에서 설명한다.",
+        "hint": "17호관 공씨네, 16호관 사이 틈으로 설명",
         "mediaId": "position19",
         "imageId": "source-position-19",
         "alt": "19호관 설명 첨부 사진"
@@ -672,7 +680,7 @@ window.MANUAL = {
       "position": "11호관에서 투어를 시작할 때에는 예술체육대학부터 출발하는 편이 효율적일 수 있습니다.",
       "locationPhoto": {
         "caption": "11호관 설명 위치",
-        "hint": "11호관에서 투어를 시작할 때에는 예술체육대학부터 출발하는 편이 효율적일 수 있습니다.",
+        "hint": "16호관 설명자가 출발하기전 19호관에서 뒤 돌아서 설명",
         "mediaId": "position11",
         "imageId": "source-position-11",
         "alt": "11호관 설명 위치 사진"
@@ -701,7 +709,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "16호관 설명 위치",
-        "hint": "",
+        "hint": "차량 돌 길 지양, 최대한 보도블럭 이용",
         "mediaId": "position16",
         "imageId": "source-position-16",
         "alt": "16호관 설명 위치 사진"
@@ -730,7 +738,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "15호관 설명 위치",
-        "hint": "",
+        "hint": "차량 돌 길 지양, 최대한 보도블럭 이용",
         "mediaId": "position15",
         "imageId": "source-position-15",
         "alt": "15호관 설명 위치 사진"
@@ -751,7 +759,7 @@ window.MANUAL = {
       "position": "계단에서는 보행을 우선하고 학생들이 안전하게 멈춘 뒤 설명한다.",
       "locationPhoto": {
         "caption": "12호관 설명 위치",
-        "hint": "계단에서는 보행을 우선하고 학생들이 안전하게 멈춘 뒤 설명한다.",
+        "hint": "15호관 설명이 끝나고 뒤 돌아서 바로 설명",
         "mediaId": null,
         "imageId": "source-position-convention",
         "alt": "12호관 설명 위치 사진"
@@ -781,7 +789,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "14호관 설명 위치",
-        "hint": "",
+        "hint": "차량 돌 길 지양, 최대한 보도블럭 이용",
         "mediaId": "position14",
         "imageId": "source-position-14",
         "alt": "14호관 설명 위치 사진"
@@ -809,7 +817,7 @@ window.MANUAL = {
       "position": "",
       "locationPhoto": {
         "caption": "13호관 설명 위치",
-        "hint": "",
+        "hint": "14호관 설명이 끝나고 뒤 돌아서 바로 설명",
         "mediaId": null,
         "imageId": "source-position-social",
         "alt": "13호관 설명 위치 사진"
@@ -829,7 +837,8 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const aliases={science:'자연대',ict:'정보대',engineering:'공대',urban:'도시대',bio:'생명대 생명공학',biocomplex:'생명대 바이오컴플렉스 생명과학',arts:'예체대',humanities:'인문대',social:'사회대',business:'글정경 동북아 경영대',free:'자유전공'};
 const key='inu-manual-26-v1', validKeys=new Set(D.cards.map(c=>'learn-'+c.id));
 let state={},storageOK=true,query='',filter='all',mode='core';
-let customLocations={},locationEditorOpen=false,locationDBPromise;
+let customLocations={},locationEditorOpen=false,locationDBPromise,ratioPhotoReady=false;
+const ratioPhotoKey="practice-photo-ratio";
 try{const probe=key+'-probe';localStorage.setItem(probe,'1');localStorage.removeItem(probe);const saved=JSON.parse(localStorage.getItem(key)||'{}');if(saved && typeof saved==='object')for(const k of validKeys)if(saved[k]===true)state[k]=true;}catch{storageOK=false;}
 let toastTimer;
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),4000);}
@@ -850,23 +859,34 @@ function bindLocation(c){
  figure.querySelector('.choose-location-photo').onclick=()=>input.click();
  input.onchange=async()=>{const file=input.files[0];input.value='';if(!file)return;const button=figure.querySelector('.choose-location-photo');button.disabled=true;
   try{
-   if(!/^image\/(jpeg|png|webp|gif|avif|bmp)$/.test(file.type)||file.size>32*1024*1024)throw new Error('JPG·PNG·WebP 등 이미지 파일을 32MB 이하로 선택하세요.');
-   const src=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('사진을 읽지 못했습니다. 다시 선택하세요.'));reader.readAsDataURL(file);});
-   const preview=new Image();preview.src=src;await preview.decode();
+   const src=await readPhotoFile(file);
    await saveLocation(c.id,src);customLocations[c.id]=src;refreshLocation(c);toast('위치 사진을 이 브라우저에 저장했습니다.');
   }catch(error){toast(error.message&&error.message.startsWith('JPG')?error.message:'사진을 저장하지 못했습니다. 이미지 파일과 브라우저 저장 공간을 확인하세요.');button.disabled=false;}
  };
  const reset=figure.querySelector('.reset-location-photo');if(reset)reset.onclick=async()=>{reset.disabled=true;try{await saveLocation(c.id,null);delete customLocations[c.id];refreshLocation(c);toast(c.locationPhoto.mediaId?'기본 사진으로 되돌렸습니다.':'선택한 사진을 삭제했습니다.');}catch{reset.disabled=false;toast('변경 내용을 저장하지 못했습니다. 다시 시도하세요.');}};
 }
 function refreshLocation(c){const figure=$('#building-'+c.id+' .building-location');figure.outerHTML=renderLocation(c);bindLocation(c);}
+async function readPhotoFile(file){
+ if(!/^image\/(jpeg|png|webp|gif|avif|bmp)$/.test(file.type)||file.size>32*1024*1024)throw new Error('JPG·PNG·WebP 등 이미지 파일을 32MB 이하로 선택하세요.');
+ const src=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('사진을 읽지 못했습니다. 다시 선택하세요.'));reader.readAsDataURL(file);});
+ const preview=new Image();preview.src=src;await preview.decode();return src;
+}
+function renderPracticePhoto(){
+ const host=$('#practice-ratio-photo'),src=customLocations[ratioPhotoKey];
+ host.innerHTML='<figure class="practice-ratio-figure">'+(src?'<img class="practice-ratio-image" src="'+src+'" alt="캠퍼스투어 사진 비율 참고 사진" loading="lazy">':'<div class="building-location-empty"><span aria-hidden="true">＋</span><span>사진을 첨부해 주세요</span></div>')+'</figure><div class="practice-ratio-controls"><button id="choose-practice-ratio" type="button"'+(ratioPhotoReady?'':' disabled')+'>'+(src?'사진 교체':'사진 첨부')+'</button>'+(src?'<button id="remove-practice-ratio" type="button">사진 삭제</button>':'')+'<input id="practice-ratio-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif,image/bmp" aria-label="캠퍼스투어 사진 비율 참고 사진 첨부" hidden></div>';
+ const input=$('#practice-ratio-input'),button=$('#choose-practice-ratio');button.onclick=()=>input.click();
+ input.onchange=async()=>{const file=input.files[0];input.value='';if(!file)return;button.disabled=true;try{const photo=await readPhotoFile(file);await saveLocation(ratioPhotoKey,photo);customLocations[ratioPhotoKey]=photo;renderPracticePhoto();toast('참고 사진을 이 브라우저에 저장했습니다.');}catch(error){button.disabled=false;toast(error.message&&error.message.startsWith('JPG')?error.message:'사진을 저장하지 못했습니다. 이미지 파일과 브라우저 저장 공간을 확인하세요.');}};
+ const image=host.querySelector('img');if(image)bindPhoto(image);
+ const remove=$('#remove-practice-ratio');if(remove)remove.onclick=async()=>{remove.disabled=true;try{await saveLocation(ratioPhotoKey,null);delete customLocations[ratioPhotoKey];renderPracticePhoto();toast('첨부한 참고 사진을 삭제했습니다.');}catch{remove.disabled=false;toast('변경 내용을 저장하지 못했습니다. 다시 시도하세요.');}};
+}
 function openLocationDB(){
  if(!locationDBPromise)locationDBPromise=new Promise((resolve,reject)=>{const req=indexedDB.open('inu-dreamwe-location-photos',1);req.onupgradeneeded=()=>req.result.createObjectStore('photos');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);req.onblocked=()=>reject(new Error('사진 저장소를 열 수 없습니다.'));});return locationDBPromise;
 }
 async function saveLocation(id,src){const db=await openLocationDB();return new Promise((resolve,reject)=>{const tx=db.transaction('photos','readwrite');if(src)tx.objectStore('photos').put(src,id);else tx.objectStore('photos').delete(id);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}
 async function loadLocations(){
- try{const db=await openLocationDB();customLocations=await new Promise((resolve,reject)=>{const result={},tx=db.transaction('photos','readonly'),request=tx.objectStore('photos').openCursor();request.onsuccess=()=>{const cursor=request.result;if(cursor){if(D.cards.some(c=>c.id===cursor.key)&&/^data:image\/(png|jpeg|webp|gif|avif|bmp);base64,/i.test(cursor.value))result[cursor.key]=cursor.value;cursor.continue();}};tx.oncomplete=()=>resolve(result);tx.onerror=()=>reject(tx.error);});D.cards.filter(c=>customLocations[c.id]).forEach(refreshLocation);}
- catch{$('#location-editor-note').textContent='이 브라우저에서 사진 저장소를 사용할 수 없습니다. 일반 브라우저 창에서 다시 열어 주세요.';}
- finally{$('#toggle-location-editor').disabled=false;}
+ try{const db=await openLocationDB();customLocations=await new Promise((resolve,reject)=>{const result={},tx=db.transaction('photos','readonly'),request=tx.objectStore('photos').openCursor();request.onsuccess=()=>{const cursor=request.result;if(cursor){if((cursor.key===ratioPhotoKey||D.cards.some(c=>c.id===cursor.key))&&/^data:image\/(png|jpeg|webp|gif|avif|bmp);base64,/i.test(cursor.value))result[cursor.key]=cursor.value;cursor.continue();}};tx.oncomplete=()=>resolve(result);tx.onerror=()=>reject(tx.error);});D.cards.filter(c=>customLocations[c.id]).forEach(refreshLocation);}
+ catch{$('#location-editor-note').textContent='이 브라우저에서 사진 저장소를 사용할 수 없습니다. 일반 브라우저 창에서 다시 열어 주세요.';$('#practice-ratio-note').textContent='이 브라우저에서 사진 저장소를 사용할 수 없습니다. 일반 브라우저 창에서 다시 열어 주세요.';}
+ finally{$('#toggle-location-editor').disabled=false;ratioPhotoReady=true;renderPracticePhoto();}
 }
 function renderCards(){
  $('#cards').innerHTML=D.cards.map(c=>`<article class="card ${state['learn-'+c.id]?'is-learned':''}" id="building-${c.id}" data-id="${c.id}"><div class="card-head"><span class="building-num">${esc(c.num)}</span><div><span class="card-kind">${esc(c.kind)} · ${c.id==='irum'?'6호관 연결':esc(c.num)+'호관'}</span><h3>${esc(c.title).replaceAll(' · ','&nbsp;· ')}</h3></div></div><div class="card-body">${renderLocation(c)}<span class="badge">필수 숙지</span>${c.depts.length?`<h4 class="small">학과·학부 구성</h4><div class="dept-list">${c.depts.map(s=>`<span${s.includes("→")?' class="dept-group"':""}>${esc(s)}</span>`).join('')}</div>`:''}${c.core.map(s=>`<p class="core-text">${formatCore(s)}</p>`).join('')}<details class="extra"><summary>추가 참고 · 상세 설명</summary><ul>${c.detail.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>${c.position&&!c.locationPhoto?`<p class="position"><b>설명 위치·운영</b><br>${esc(c.position)}</p>`:''}</details></div><div class="card-footer"><label class="learn-check"><input type="checkbox" data-check="learn-${c.id}" ${state['learn-'+c.id]?'checked':''}><span>학과·핵심 특징 숙지 완료</span></label></div></article>`).join('');
@@ -882,7 +902,7 @@ const route=[["intro","홍보관 · 인천대 소개","홍보관 · 실내 학�
 $('#route-list').innerHTML=route.map(([id,title,desc])=>`<li><a href="#building-${id}">${title}</a><small>${desc}</small></li>`).join('');
 [['#source-equipment-1','1'],['#source-equipment-2','2'],['#source-map','3'],['#source-walk-16-14','walk1614']].forEach(([sel,id])=>{const img=$(sel);img.src=window.SOURCE_MEDIA[id];bindPhoto(img);});
 $$('[data-brand-image]').forEach(img=>img.src=window.SOURCE_MEDIA[img.dataset.brandImage]);
-D.cards.forEach(bindLocation);loadLocations();
+D.cards.forEach(bindLocation);renderPracticePhoto();loadLocations();
 $('#toggle-location-editor').onclick=()=>{locationEditorOpen=!locationEditorOpen;$('#toggle-location-editor').setAttribute('aria-pressed',String(locationEditorOpen));$('#toggle-location-editor').textContent=locationEditorOpen?'사진 편집 마치기':'위치 사진 편집';$('#location-editor-note').hidden=!locationEditorOpen;$$('.location-photo-controls').forEach(controls=>controls.hidden=!locationEditorOpen);};
 document.addEventListener('change',e=>{const k=e.target.dataset.check;if(!k)return;state[k]=e.target.checked;const card=e.target.closest('.card');if(card)card.classList.toggle('is-learned',e.target.checked);persist();applyFilter();});
 $('#search').addEventListener('input',e=>{query=e.target.value;applyFilter();});$('#clear-search').onclick=()=>{query='';$('#search').value='';applyFilter();$('#search').focus();};$('#reset-search').onclick=resetSearch;
